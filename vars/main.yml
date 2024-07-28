@@ -1,1 +1,4 @@
 ---
+role_name: softether-server
+service_name: softether-vpnserver
+softether_iptables_conf: "/etc/systemd/system/softether-vpnserver.service.d/iptables.conf"

@@ -1,18 +1,18 @@
-# Ansible role: template
-Brief description of role.
+# Ansible role: softether-server
+SoftEther VPN server (SSTP)
 
 ## Requirements
 Only tested on Debian stable, for now.
 
 ## Role Variables
-+ `variable`: description
++ `softether_port` (default: 443): TCP port to listen on
 
 ## Playbooks
 + `main.yml`: apply role
 + `uninstall.yml`: remove. Run prior to removing host from inventory group.
 
 ## Dependencies
-None.
++ [ho-ansible.systemd](https://github.com/ho-ansible/systemd)
 
 ## License
 + Ansible role licensed [MIT](LICENSE)

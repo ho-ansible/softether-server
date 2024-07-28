@@ -1,1 +1,7 @@
 ---
+- name: restart softether-server
+  tags:
+  - service
+  service:
+    name: "{{ service_name }}"
+    state: restarted

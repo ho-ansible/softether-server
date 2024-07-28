@@ -1,10 +1,10 @@
 #! /usr/bin/env ansible-playbook
-# Configure template role
-# Replace 'all' with your own inventory group
+# Configure softether-server role
 ---
-- name: template | template role
-  hosts: all
+- name: softether-server | VPN server
+  hosts: softether_server
   roles:
-  - role: template
+  - role: softether-server
     tags:
-    - template
+    - softether
+    - vpn

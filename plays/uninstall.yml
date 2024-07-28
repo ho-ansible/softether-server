@@ -2,9 +2,9 @@
 # Uninstall role
 # Run prior to removing host from inventory groups, so hostvars are accessible
 ---
-- name: template | uninstall
-  hosts: all
+- name: softether-server | uninstall
+  hosts: softether_server
   tasks:
   - include_role:
-      name: template
+      name: softether-server
       tasks_from: uninstall.yml

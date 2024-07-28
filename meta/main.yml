@@ -1,6 +1,6 @@
 galaxy_info:
   author: Sean Ho
-  description: Template ansible role
+  description: SoftEther SSTP VPN Server
   company: Anchorlytics Consulting
   license: MIT
 
@@ -10,9 +10,11 @@ galaxy_info:
   - name: Debian
     versions:
     - stable
-    - 10
+    - 12
 
   galaxy_tags:
-  - template
+  - softether
+  - vpn
 
-dependencies: []
+dependencies:
+- role: systemd

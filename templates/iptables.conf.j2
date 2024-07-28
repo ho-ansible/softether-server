@@ -1,0 +1,15 @@
+# {{ ansible_managed }}
+# Firewall rules for softether VPN
+
+{#- Macros #}
+{% set ipt  = '/usr/sbin/iptables' %}
+{% set ipt6 = '/usr/sbin/ip6tables' %}
+{% set in_rule = '-p tcp --dport ' ~ softether_port ~ ' -j ACCEPT' %}
+
+[Service]
+ExecStartPre=!-{{ ipt }} -D INPUT {{ in_rule }}
+ExecStartPre=!-{{ ipt6 }} -D INPUT {{ in_rule }}
+ExecStartPre=!{{ ipt }} -A INPUT {{ in_rule }}
+ExecStartPre=!{{ ipt6 }} -A INPUT {{ in_rule }}
+ExecStopPost=!-{{ ipt }} -D INPUT {{ in_rule }}
+ExecStopPost=!-{{ ipt6 }} -D INPUT {{ in_rule }}
